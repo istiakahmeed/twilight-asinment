@@ -28,6 +28,7 @@ const Sculpture: React.FC<SculptureProps> = ({ handleCardClick }) => {
           {products[0].sculpture.map((product) => (
             <ProductCard
               key={product.id}
+              ui={product.ui}
               id={product.id}
               title={product.title}
               imageSrc={product.imageSrc}

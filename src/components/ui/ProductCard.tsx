@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 
 const ProductCard: React.FC<ProductCardProps> = ({
+  ui,
   id,
   title,
   imageSrc,
@@ -35,7 +36,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
-          <Link href={`/details/${id}`}>
+          <Link href={`/details/${ui}`}>
             <img
               src={currentImageSrc}
               alt="Clothing"
@@ -55,9 +56,12 @@ const ProductCard: React.FC<ProductCardProps> = ({
           </button>
         </div>
         <div className="pt-2">
-          <h3 className="text-[16px] font-thin text-black cursor-pointer">
-            {title}
-          </h3>
+          <Link href={`/details/${ui}`}>
+            <h3 className="text-[16px] font-thin text-black cursor-pointer">
+              {title}
+            </h3>
+          </Link>
+
           <span className="flex gap-x-4 pt-1">
             <span className="text-black font-bold">৳ {price}</span>
             <span className="font-bold text-red-500 line-through">

@@ -34,29 +34,28 @@ const SculptureShoCase: React.FC<SculptureShoCaseProps> = ({
 
   return (
     <SectionContainer>
-      <div className="container mt-12">
-        <div className="flex justify-center items-center bg-[#F6F6F6] flex-col md:flex-row lg:flex-row">
-          <div className="w-full md:w-2/4 h-2/3 group overflow-hidden">
-            <div className="w-full h-full">
-              <img
-                src="/image_26.webp"
-                alt="Image"
-                height="620"
-                width="800"
-                className="w-full md:h-[80vh] lg:max-h-full object-cover transition-transform duration-300 transform group-hover:scale-105"
-              />
-            </div>
+      <div className="container h-screen mt-12">
+        <div className="flex justify-center items-center bg-[#F6F6F6] flex-col lg:flex-row h-full">
+          <div className="w-full lg:w-2/4 h-full lg:h-full overflow-hidden group">
+            <img
+              src="/image_26.webp"
+              alt="Image"
+              className="w-full h-full object-cover transition-transform duration-300 transform group-hover:scale-105"
+            />
           </div>
-          <div className="w-full md:w-2/4 h-2/3">
-            <div className="relative w-full mx-auto h-[55vh] lg:h-[88vh] pt-5">
-              <div className="rounded-xl overflow-hidden h-full relative">
-                <div
-                  className="flex transition-transform duration-500 h-full"
-                  style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-                >
-                  {products[0].sculpture.map((product, index) => (
+          <div className="w-full lg:w-2/4 h-full lg:h-full flex justify-center items-center ">
+            <div className="relative w-4/5 h-full lg:h-[88vh] pt-5 overflow-hidden">
+              <div
+                className="w-full h-full flex transition-transform duration-500"
+                style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+              >
+                {products[0].sculpture.map((product) => (
+                  <div
+                    key={product.id}
+                    className="w-full flex justify-center items-center flex-shrink-0 pb-4"
+                  >
                     <ProductCard
-                      key={product.id}
+                      ui={product.ui}
                       id={product.id}
                       title={product.title}
                       imageSrc={product.imageSrc}
@@ -67,32 +66,31 @@ const SculptureShoCase: React.FC<SculptureShoCaseProps> = ({
                       product={product}
                       onCardClick={handleCardClick}
                     />
-                  ))}
-                </div>
-                <button
-                  onClick={prevSlide}
-                  className="absolute top-1/2 -translate-y-1/2 left-4 z-10 p-2 bg-[#23232370] rounded-full text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-300"
-                >
-                  <ArrowLeft className="w-8 h-8" />
-                </button>
-                <button
-                  onClick={nextSlide}
-                  className="absolute top-1/2 -translate-y-1/2 right-4 z-10 p-2 bg-[#23232370] rounded-full text-white focus:outline-none "
-                >
-                  <ArrowRight className="w-8 h-8" />
-                </button>
-
-                <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex gap-2">
-                  {products[0].sculpture.map((_, index) => (
-                    <button
-                      key={index}
-                      onClick={() => setCurrentIndex(index)}
-                      className={`w-3 h-3 rounded-full ${
-                        currentIndex === index ? "bg-[#C29D04]" : "bg-white/50"
-                      } hover:bg-[#C29D04] focus:bg-[#C29D04] focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-300`}
-                    />
-                  ))}
-                </div>
+                  </div>
+                ))}
+              </div>
+              <button
+                onClick={prevSlide}
+                className="absolute top-1/2 -translate-y-1/2 left-4 z-10 p-2 bg-[#23232370] rounded-full text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-300"
+              >
+                <ArrowLeft className="w-8 h-8" />
+              </button>
+              <button
+                onClick={nextSlide}
+                className="absolute top-1/2 -translate-y-1/2 right-4 z-10 p-2 bg-[#23232370] rounded-full text-white focus:outline-none"
+              >
+                <ArrowRight className="w-8 h-8" />
+              </button>
+              <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 flex gap-2">
+                {products[0].sculpture.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentIndex(index)}
+                    className={`w-3 h-3 rounded-full ${
+                      currentIndex === index ? "bg-[#f7d240]" : "bg-white/50"
+                    } hover:bg-[#eecb3e] focus:bg-[#f8d33d] focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-300`}
+                  />
+                ))}
               </div>
             </div>
           </div>
@@ -103,3 +101,10 @@ const SculptureShoCase: React.FC<SculptureShoCaseProps> = ({
 };
 
 export default SculptureShoCase;
+
+{
+}
+
+{
+  /* */
+}

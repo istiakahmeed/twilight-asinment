@@ -27,6 +27,7 @@ const LatestArrival: React.FC<LatestArrivalProps> = ({ handleCardClick }) => {
           {products[0].latestProducts.map((product) => (
             <ProductCard
               key={product.id}
+              ui={product.ui}
               id={product.id}
               title={product.title}
               imageSrc={product.imageSrc}

@@ -1,4 +1,5 @@
 export interface ProductCardProps {
+  ui: number;
   id: number;
   title: string;
   imageSrc: string;
@@ -12,6 +13,7 @@ export interface ProductCardProps {
 }
 
 export interface Product {
+  ui: number;
   id: number;
   title: string;
   imageSrc: string;
