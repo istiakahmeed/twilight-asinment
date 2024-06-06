@@ -203,9 +203,11 @@ const Navbar = () => {
               {/* Cart */}
               <li className="flex font-medium p-2 items-center gap-2">
                 <div className="cursor-pointer outline-none flex items-center relative">
-                  <ShoppingBag size={21} />
-                  <div className="absolute top-[-12px] left-[-10px] w-5 h-5 bg-neutral-400 flex justify-center items-center text-white">
-                    0
+                  <Link href="/cart">
+                    <ShoppingBag size={21} />
+                  </Link>
+                  <div className="absolute top-[-12px] left-[-10px] w-6 h-6 bg-neutral-400 flex justify-center items-center text-white ">
+                    {0}
                   </div>
                 </div>
                 <p className="cursor-pointer font-extrabold text-neutral-950 text-[12px] hover-underline">

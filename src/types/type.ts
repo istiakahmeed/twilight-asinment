@@ -28,3 +28,11 @@ export interface ProductCategory {
   sculpture: Product[];
   furniture: Product[];
 }
+
+export interface CartItem {
+  id: number;
+  title: string;
+  price: number;
+  imageSrc: string;
+  quantity: number;
+}
