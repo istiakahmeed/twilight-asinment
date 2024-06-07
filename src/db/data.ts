@@ -304,4 +304,12 @@ export const testimonials = [
     content: "Amazing products, changes the look of your sweet home!",
     author: "Rodela Amin",
   },
+  {
+    content: "Amazing products, changes the look of your sweet home!",
+    author: "Meghla Jahan",
+  },
+  {
+    content: "Amazing products, changes the look of your sweet home!",
+    author: "Mubin Ahmed",
+  },
 ];

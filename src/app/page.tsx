@@ -39,7 +39,7 @@ export default function Home() {
       <Sculpture handleCardClick={handleCardClick} />
       <Furniture handleCardClick={handleCardClick} />
       <SculptureShoCase handleCardClick={handleCardClick} />
-      {/* <Testimonials /> */}
+      <Testimonials />
       <div className="lg:hidden md:block sm:block ">
         <BottomNav />
       </div>

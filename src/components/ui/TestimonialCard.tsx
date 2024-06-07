@@ -1,17 +1,34 @@
+import SectionContainer from "@/utils/SectionContainer";
 import { QuoteIcon, StarIcon } from "lucide-react";
+import React from "react";
 
-function TestimonialCard({ testimonial }: any) {
-  return (
-    <div className="p-4 bg-white rounded-lg shadow-md">
-      <QuoteIcon className="text-yellow-400 h-6 w-6" />
-      <div className="flex mt-2 mb-4">
-        {[...Array(5)].map((_, index) => (
-          <StarIcon key={index} className="text-yellow-400 h-4 w-4" />
-        ))}
-      </div>
-      <p className="text-sm text-gray-600">{testimonial.content}</p>
-      <p className="mt-4 font-bold">{testimonial.author}</p>
-    </div>
-  );
+interface TestimonialCardProps {
+  author: string;
+  content: string;
 }
+
+const TestimonialCard: React.FC<TestimonialCardProps> = ({
+  author,
+  content,
+}) => {
+  return (
+    <SectionContainer>
+      <div className="flex space-x-4 md:w-[392px] lg:w-[392px] lg:h-[300px] md:[300px]">
+        <div className="p-4 bg-[#F6F6F6] rounded-lg shadow-md border border-gray-400">
+          <QuoteIcon className="text-black h-16 w-16 rotate-180" />
+          <div className="flex mt-2 mb-4">
+            <StarIcon className="text-yellow-400 h-6 w-6" />
+            <StarIcon className="text-yellow-400 h-6 w-6" />
+            <StarIcon className="text-yellow-400 h-6 w-6" />
+            <StarIcon className="text-yellow-400 h-6 w-6" />
+            <StarIcon className="text-yellow-400 h-6 w-6" />
+          </div>
+          <p className="text-lg text-gray-950 pt-2">{content}</p>
+          <p className="mt-6 font-bold">{author}</p>
+        </div>
+      </div>
+    </SectionContainer>
+  );
+};
+
 export default TestimonialCard;

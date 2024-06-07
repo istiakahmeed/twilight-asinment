@@ -11,6 +11,7 @@ import {
   Plus,
   ShieldCheck,
 } from "lucide-react";
+import Link from "next/link";
 import { useState } from "react";
 
 interface PageProps {
@@ -69,9 +70,22 @@ export default function Page({ params }: PageProps) {
 
   return (
     <SectionContainer>
+      <header className="w-full h-16 bg-white sticky top-0 ">
+        <div className="flex justify-start items-center h-16 z-50 overflow-hidden">
+          <h3 style={{ fontFamily: "none" }}>
+            <span className="text-gray-700 hover:text-black cursor-none">
+              <Link href="/" className="cursor-none">
+                Home
+              </Link>
+            </span>{" "}
+            / <span className="text-gray-700 hover:text-black">Catagories</span>{" "}
+            / <span className="text-black  text-lg">{product.title}</span>
+          </h3>
+        </div>
+      </header>
       <div className="flex flex-col md:flex-row lg:flex-row gap-x-5 w-full h-screen-sm pt-10">
         <div className="relative">
-          <div className="w-auto h-auto md:w-[614px] md:h-[602px] border-2 border-[#EFEFEF] rounded-lg overflow-hidden relative">
+          <div className="w-auto h-auto md:w-[614px] md:h-[602px] border-2 border-[#EFEFEF] rounded-lg overflow-hidden relative -z-10">
             {previousImage && (
               <img
                 src={previousImage}
@@ -93,7 +107,7 @@ export default function Page({ params }: PageProps) {
           </div>
           <div className="flex w-full h-20 justify-center items-center gap-x-4 pt-2">
             <div
-              className={`overflow-hidden w-[75px] h-full ${
+              className={`overflow-hidden w-[75px] h-full -z-20 ${
                 activeImage === product?.hoverImageSrc
                   ? "border-4 border-black"
                   : "border-2 border-[#EFEFEF] rounded-sm"
@@ -108,7 +122,7 @@ export default function Page({ params }: PageProps) {
             </div>
 
             <div
-              className={`w-[75px] h-full ${
+              className={`w-[75px] h-full -z-20 ${
                 activeImage === product?.imageSrc
                   ? "border-4 border-black"
                   : "border-2 border-[#EFEFEF] rounded-sm"
@@ -123,7 +137,7 @@ export default function Page({ params }: PageProps) {
             </div>
 
             <div
-              className="absolute cursor-pointer left-4 w-8 h-8 rounded-full bg-[#dddcdc] flex justify-center items-center"
+              className="absolute cursor-pointer -z-20 left-4 w-8 h-8 rounded-full bg-[#dddcdc] flex justify-center items-center"
               onClick={() => handleImageClick(product?.hoverImageSrc)}
             >
               <ChevronLeft
@@ -133,7 +147,7 @@ export default function Page({ params }: PageProps) {
               />
             </div>
             <div
-              className="absolute cursor-pointer right-4 w-8 h-8 rounded-full bg-[#dddcdc] flex justify-center items-center"
+              className="absolute cursor-pointer -z-20 right-4 w-8 h-8 rounded-full bg-[#dddcdc] flex justify-center items-center"
               onClick={() => handleImageClick(product?.hoverImageSrc)}
             >
               <ChevronRight
