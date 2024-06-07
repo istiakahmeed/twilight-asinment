@@ -1,9 +1,13 @@
 "use client";
+import Button from "@/components/ui/Button";
+import ProductIdcard from "@/components/ui/ProductIdcrd";
+import TitleText from "@/components/ui/TitleText";
 import { allProduct } from "@/db/data";
 import useCart from "@/hooks/useCart";
 import { Product } from "@/types/type";
 import SectionContainer from "@/utils/SectionContainer";
 import {
+  ArrowRight,
   ChevronLeft,
   ChevronRight,
   LockKeyhole,
@@ -70,15 +74,18 @@ export default function Page({ params }: PageProps) {
 
   return (
     <SectionContainer>
-      <header className="w-full h-16 bg-white sticky top-0 ">
-        <div className="flex justify-start items-center h-16 z-50 overflow-hidden">
+      <header className="w-full h-16 bg-white">
+        <div className="flex justify-start items-center h-16 overflow-y-hidden">
           <h3 style={{ fontFamily: "none" }}>
-            <span className="text-gray-700 hover:text-black cursor-none">
-              <Link href="/" className="cursor-none">
+            <span className="text-gray-700 hover:text-black hover:font-semibold">
+              <Link href="/" className="cursor-text">
                 Home
               </Link>
             </span>{" "}
-            / <span className="text-gray-700 hover:text-black">Catagories</span>{" "}
+            /{" "}
+            <span className="text-gray-700 hover:text-black hover:font-semibold">
+              Catagories
+            </span>{" "}
             / <span className="text-black  text-lg">{product.title}</span>
           </h3>
         </div>
@@ -122,7 +129,7 @@ export default function Page({ params }: PageProps) {
             </div>
 
             <div
-              className={`w-[75px] h-full -z-20 ${
+              className={`w-[75px] h-full -z-10 cursor-pointer ${
                 activeImage === product?.imageSrc
                   ? "border-4 border-black"
                   : "border-2 border-[#EFEFEF] rounded-sm"
@@ -187,11 +194,11 @@ export default function Page({ params }: PageProps) {
               <p className="text-lg">Select Color *</p>
               <div className="flex  gap-x-2 pt-2">
                 <div
-                  className="w-full h-10 bg-[#4A90E2] pt-1 rounded-md"
+                  className="w-full h-10 bg-[#4A90E2] pt-1 rounded-md cursor-pointer"
                   onClick={() => handleImageClick(product?.imageSrc)}
                 ></div>
                 <div
-                  className="w-full h-10 bg-[#FACD95] pt-1 rounded-md"
+                  className="w-full h-10 bg-[#FACD95] pt-1 rounded-md cursor-pointer"
                   onClick={() => handleImageClick(product?.hoverImageSrc)}
                 ></div>
               </div>
@@ -270,6 +277,29 @@ export default function Page({ params }: PageProps) {
             </div>
           </div>
         </div>
+      </div>
+      <div className="container mb-6 mt-12">
+        <div className="flex items-center font-semibold mb-5 justify-between">
+          <TitleText title={product.title} />
+          <Button text="View All">
+            <ArrowRight size={16} strokeWidth={4} />
+          </Button>
+        </div>
+      </div>
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+        {allProduct.map((pro) => (
+          <ProductIdcard
+            key={pro.id}
+            id={pro.id}
+            imageSrc={pro.imageSrc}
+            title={product.title}
+            price={pro.price}
+            old_price={pro.old_price}
+            hoverImageSrc={pro.hoverImageSrc}
+            ui={pro.ui}
+            label={pro.label}
+          />
+        ))}
       </div>
     </SectionContainer>
   );

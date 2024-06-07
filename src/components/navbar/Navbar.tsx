@@ -36,7 +36,7 @@ const Navbar = () => {
         className={`${
           isScrolled && "bg-opacity-[0.5] drop-shadow-sm bg-[#ffffffcc]"
         } border-gray-300 w-full backdrop-blur-lg  ${
-          isHomePage ? "md:sticky lg:sticky top-0 z-50" : ""
+          isHomePage ? "md:sticky lg:sticky top-0 z-50" : "z-50"
         } `}
       >
         <div className="grid justify-between h-16 grid-cols-3 lg:grid-cols-5 container mx-auto items-center px-4">

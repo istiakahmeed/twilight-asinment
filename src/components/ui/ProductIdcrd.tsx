@@ -1,9 +1,9 @@
 "use client";
-import { ProductCardProps } from "@/types/type";
+import { ProductIdcardProps } from "@/types/type";
 import Link from "next/link";
 import { useState } from "react";
 
-const ProductCard: React.FC<ProductCardProps> = ({
+const ProductIdcard: React.FC<ProductIdcardProps> = ({
   ui,
   id,
   title,
@@ -12,8 +12,6 @@ const ProductCard: React.FC<ProductCardProps> = ({
   label,
   price,
   old_price,
-  onCardClick,
-  product,
 }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [currentImageSrc, setCurrentImageSrc] = useState(imageSrc);
@@ -30,7 +28,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
 
   return (
     <>
-      <div className="lg:w-[300px] lg:h-[380px] cursor-pointer">
+      <div className="lg:w-[300px] lg:h-[380px] cursor-pointer ">
         <div
           className="relative group overflow-hidden rounded-lg lg:h-[320px] cursor-pointer"
           onMouseEnter={handleMouseEnter}
@@ -48,12 +46,6 @@ const ProductCard: React.FC<ProductCardProps> = ({
           <div className="absolute top-4 left-4 bg-neutral-400 text-white px-2 py-1 rounded-md text-sm">
             {label}
           </div>
-          <button
-            className="absolute bottom-4 left-1/2 transform w-4/5 -translate-x-1/2 bg-white text-black border border-neutral-500 rounded-md text-sm p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-            onClick={() => onCardClick(product)}
-          >
-            Shop Now
-          </button>
         </div>
         <div className="pt-2">
           <Link href={`/details/${ui}`}>
@@ -74,4 +66,4 @@ const ProductCard: React.FC<ProductCardProps> = ({
   );
 };
 
-export default ProductCard;
+export default ProductIdcard;

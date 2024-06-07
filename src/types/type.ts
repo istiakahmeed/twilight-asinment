@@ -11,6 +11,16 @@ export interface ProductCardProps {
   onCardClick: (product: Product) => void;
   className?: string;
 }
+export interface ProductIdcardProps {
+  ui: number;
+  id: number;
+  title: string;
+  imageSrc: string;
+  hoverImageSrc: string;
+  label: string;
+  price: number;
+  old_price: number;
+}
 
 export interface Product {
   ui: number;
