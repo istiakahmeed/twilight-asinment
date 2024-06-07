@@ -114,7 +114,7 @@ export default function Page({ params }: PageProps) {
           </div>
           <div className="flex w-full h-20 justify-center items-center gap-x-4 pt-2">
             <div
-              className={`overflow-hidden w-[75px] h-full -z-20 ${
+              className={`overflow-hidden w-[75px] h-full  ${
                 activeImage === product?.hoverImageSrc
                   ? "border-4 border-black"
                   : "border-2 border-[#EFEFEF] rounded-sm"
