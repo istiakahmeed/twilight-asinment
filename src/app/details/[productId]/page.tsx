@@ -129,7 +129,7 @@ export default function Page({ params }: PageProps) {
             </div>
 
             <div
-              className={`w-[75px] h-full -z-10 cursor-pointer ${
+              className={`w-[75px] h-full cursor-pointer ${
                 activeImage === product?.imageSrc
                   ? "border-4 border-black"
                   : "border-2 border-[#EFEFEF] rounded-sm"
@@ -144,23 +144,23 @@ export default function Page({ params }: PageProps) {
             </div>
 
             <div
-              className="absolute cursor-pointer -z-20 left-4 w-8 h-8 rounded-full bg-[#dddcdc] flex justify-center items-center"
+              className="absolute cursor-pointer left-4 w-8 h-8 rounded-full bg-[#dddcdc] flex justify-center items-center"
               onClick={() => handleImageClick(product?.hoverImageSrc)}
             >
               <ChevronLeft
                 size={24}
                 strokeWidth={3}
-                className="text-[#B2B2B2]"
+                className="text-[#727070]"
               />
             </div>
             <div
-              className="absolute cursor-pointer -z-20 right-4 w-8 h-8 rounded-full bg-[#dddcdc] flex justify-center items-center"
-              onClick={() => handleImageClick(product?.hoverImageSrc)}
+              className="absolute cursor-pointer right-4 w-8 h-8 rounded-full bg-[#dddcdc] flex justify-center items-center"
+              onClick={() => handleImageClick(product?.imageSrc)}
             >
               <ChevronRight
                 size={24}
                 strokeWidth={3}
-                className="text-[#B2B2B2]"
+                className="text-[#727070]"
               />
             </div>
           </div>

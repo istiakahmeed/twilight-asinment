@@ -31,10 +31,11 @@ const Navbar = () => {
     <>
       <nav
         className={`${
-          isScrolled && "bg-opacity-[0.5] drop-shadow-sm bg-[#ffffffcc]"
+          isScrolled &&
+          "bg-opacity-[0.5] drop-shadow-sm md:sticky lg:sticky top-0 z-50 bg-[#ffffffcc] "
         } border-gray-300 w-full backdrop-blur-lg  
-          "md:sticky lg:sticky top-0 z-50" 
-        } `}
+          " 
+        }`}
       >
         <div className="grid justify-between h-16 grid-cols-3 lg:grid-cols-5 container mx-auto items-center px-4">
           {/* Mobile Menu Icon */}
@@ -231,7 +232,6 @@ const Navbar = () => {
           <hr className="border-b border-gray-300" />
         </div>
       </nav>
-
       {/* SideNav Component */}
       <SideNav isOpen={isMobileMenuOpen} toggleMobileMenu={toggleMobileMenu} />
     </>
