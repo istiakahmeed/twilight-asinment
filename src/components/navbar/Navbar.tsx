@@ -2,13 +2,10 @@
 import { AlignLeft, Globe, Search, ShoppingBag } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import SideNav from "./SideNav";
 
 const Navbar = () => {
-  const pathname = usePathname();
-  const isHomePage = pathname === "/";
   const [isScrolled, setIsScrolled] = useState(false);
   const [isCategoriesOpen, setIsCategoriesOpen] = useState(false);
   const [isPagesOpen, setIsPagesOpen] = useState(false);
@@ -35,8 +32,8 @@ const Navbar = () => {
       <nav
         className={`${
           isScrolled && "bg-opacity-[0.5] drop-shadow-sm bg-[#ffffffcc]"
-        } border-gray-300 w-full backdrop-blur-lg  ${
-          isHomePage ? "md:sticky lg:sticky top-0 z-50" : "z-50"
+        } border-gray-300 w-full backdrop-blur-lg  
+          "md:sticky lg:sticky top-0 z-50" 
         } `}
       >
         <div className="grid justify-between h-16 grid-cols-3 lg:grid-cols-5 container mx-auto items-center px-4">
