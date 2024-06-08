@@ -2,6 +2,7 @@ import { testimonials } from "@/db/data";
 import SectionContainer from "@/utils/SectionContainer";
 import { useEffect, useState } from "react";
 import TestimonialCard from "./ui/TestimonialCard";
+import TitleText from "./ui/TitleText";
 
 export default function Testimonials() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -25,7 +26,12 @@ export default function Testimonials() {
 
   return (
     <SectionContainer>
-      <div className="relative mt-20 py-20 ">
+      <div className="container mt-16 pt-4">
+        <div className="flex items-center font-semibold justify-between">
+          <TitleText title="Testimonial" />
+        </div>
+      </div>
+      <div className="relative  pb-10 pt-5 ">
         <div className="w-auto h-auto md:w-full md:h-full lg:h-full pt-5 overflow-hidden">
           <div
             className="flex justify-center items-center w-auto h-auto md:w-full md:h-full  transition-transform duration-500"
